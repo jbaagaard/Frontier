@@ -27,10 +27,14 @@ export const RangeDiv = styled.div<{CityIsInRange:boolean, range:number}>`
 `
 
 export const RangeDisplayWrapper = styled.div`
+
   position: absolute;
 `
 
-export const RangeDisplaysvg = styled.svg`
+export const RangeDisplaysvg = styled.svg<{range:number}>`
+  position: absolute;
+  top: -${props => props.range/2}px;
+  left: -${props => props.range/2}px;
 
     `
 export const RangeDisplayLine = styled.line`

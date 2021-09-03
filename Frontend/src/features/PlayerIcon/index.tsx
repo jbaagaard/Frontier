@@ -16,10 +16,7 @@ const PlayerIcon = ({player}: PlayerIconProps) => {
     return (
         <S.Wrapper>
             {targetCity &&
-            // <S.RangeDiv CityIsInRange={calculateDistance(player.pos, targetCity.pos) < vessels[player.vessel].range}
-            //             range={vessels[player.vessel].range * scale}/>
             <RangeDisplayUi pos1={player.pos} pos2={targetCity.pos} range={vessels[player.vessel].range}/>
-
             }
             <S.PlayerIcon/>
         </S.Wrapper>
@@ -39,12 +36,14 @@ export const RangeDisplayUi = ({pos1, pos2, range}: RangeDisplayUiProps) => {
     const distance = calculateDistance(pos1, pos2)
     const {scale} = useContext(MapContext);
 
+    console.log((pos1.x-pos2.x)*scale, (pos1.y-pos2.y)*scale)
+
     return (
         <S.RangeDisplayWrapper>
             <S.RangeDiv CityIsInRange={distance < range}
                         range={range * scale}/>
-            <S.RangeDisplaysvg height={distance * scale} width={distance * scale} xmlns="http://www.w3.org/2000/svg">
-                <S.RangeDisplayLine x1={pos1.x} y1={pos1.y} x2={pos2.x} y2={pos2.y}/>
+            <S.RangeDisplaysvg range={distance*2*scale} height={distance*2 * scale} width={distance*2 * scale} xmlns="http://www.w3.org/2000/svg">
+                <S.RangeDisplayLine x1={distance*scale} y1={distance*scale} x2={(pos1.x-pos2.x)*scale} y2={(pos1.y-pos2.y)*scale}/>
             </S.RangeDisplaysvg>
         </S.RangeDisplayWrapper>
     )
