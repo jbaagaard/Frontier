@@ -31,6 +31,7 @@ export const TargetCityUi = styled.div`
   position: fixed;
   bottom: 24px;
   right: 24px;
+  pointer-events: none;
 `
 
 export const MenuWrapper = styled.div`
