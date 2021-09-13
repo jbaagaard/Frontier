@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import {uiBoxshadow} from "../GeneralComponents/StyledComponents";
+import {slideInLeft, slideInRight, uiBoxshadow} from "../GeneralComponents/StyledComponents";
 
 export const Wrapper = styled.div`
   padding: 16px;
   background-color: #fff;
-  ${uiBoxshadow}
+  ${slideInLeft};
+  ${uiBoxshadow};
   
 `
 

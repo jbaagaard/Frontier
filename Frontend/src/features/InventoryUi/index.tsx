@@ -24,6 +24,9 @@ const InventoryUi = ({player, onCancel}: InventoryUiProps) => {
                         <S.Text>{r.averageBuyPrice}</S.Text>
                         </S.ResourceGrid>)}
                 </S.ResourceList>
+                {player.inventory.resources.length == 0 &&
+                <S.Text>"Nothing to show"</S.Text>
+                }
             </S.Wrapper>
         </PopupUiComponent>
     )

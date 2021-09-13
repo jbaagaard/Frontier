@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {uiBoxshadow} from "../GeneralComponents/StyledComponents";
+import {slideInLeft, uiBoxshadow} from "../GeneralComponents/StyledComponents";
 
 export const Wrapper = styled.div<{top:number,left:number}>`
   transition: top 100ms;
@@ -9,6 +9,8 @@ export const Wrapper = styled.div<{top:number,left:number}>`
   z-index: 2;
   background-color: #fff;
   ${uiBoxshadow};
+  ${slideInLeft}
+
 `
 
 export const Header = styled.div`

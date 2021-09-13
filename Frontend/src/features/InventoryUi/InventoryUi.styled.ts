@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import {UiSmallText, UiSubTitle, UiTitle} from "../GeneralComponents/fonts";
+import {slideInRight} from "../GeneralComponents/StyledComponents";
 
 export const Wrapper = styled.div`
-  
+  min-height: 320px;
+  padding: 8px;
 `
 
 export const Title = styled(UiTitle)`
